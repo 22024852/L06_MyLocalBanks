@@ -50,14 +50,14 @@ String wordClicked = "";
         int id = item.getItemId();
 
         if (id == R.id.menuItemChinese) {
-            DBS.setText("星展银行");
-            OCBC.setText("华侨银行");
-            UOB.setText("大华银行");
+            DBS.setText(getResources().getString(R.string.DBSChinese));
+            OCBC.setText(getResources().getString(R.string.OCBCChinese));
+            UOB.setText(getResources().getString(R.string.UOBChinese));
             return true;
         } else if (id == R.id.menuItemEnglish) {
-            DBS.setText("DBS");
-            OCBC.setText("OCBC");
-            UOB.setText("UOB");
+            DBS.setText(getResources().getString(R.string.DBS));
+            OCBC.setText(getResources().getString(R.string.OCBC));
+            UOB.setText(getResources().getString(R.string.UOB));
             return true;
         }
 
@@ -88,7 +88,7 @@ String wordClicked = "";
 
         if(wordClicked.equalsIgnoreCase("dbs")){
             if(item.getItemId()==0) {
-                Intent intent = new Intent(Intent. ACTION_VIEW, Uri.parse("https://www.dbs.com.sg"));
+                Intent intent = new Intent(Intent. ACTION_VIEW, Uri.parse(getResources().getString(R.string.DBSURL)));
                 startActivity(intent);
             } else if (item.getItemId()==1){
                 Intent intentCall = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" +18001111111L));
@@ -102,12 +102,12 @@ String wordClicked = "";
             }
         } else if(wordClicked.equalsIgnoreCase("ocbc")){
             if (item.getItemId()==0){
-                Intent intent = new Intent(Intent. ACTION_VIEW, Uri.parse("https://www.ocbc.com"));
+                Intent intent = new Intent(Intent. ACTION_VIEW, Uri.parse(getResources().getString(R.string.OCBCURL)));
                 startActivity(intent);
             } else if (item.getItemId()==1){
                 Intent intentCall = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" +18003633333L));
                 startActivity(intentCall);
-            }    else if (item.getItemId()==2){
+            } else if (item.getItemId()==2){
                 if (OCBC.getCurrentTextColor()== Color.RED){
                     OCBC.setTextColor(Color.BLACK);
                 } else {
@@ -117,7 +117,7 @@ String wordClicked = "";
             }
         } else if(wordClicked.equalsIgnoreCase("uob")){
             if (item.getItemId()==0){
-                Intent intent = new Intent(Intent. ACTION_VIEW, Uri.parse("https://www.uob.com.sg"));
+                Intent intent = new Intent(Intent. ACTION_VIEW, Uri.parse(getResources().getString(R.string.UOBURL)));
                 startActivity(intent);
             } else if (item.getItemId()==1){
                 Intent intentCall = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" +18002222121L));
